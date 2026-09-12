@@ -16,14 +16,14 @@
 
     --blue:#0b0b45;
     --blue-soft:#E4E4EF;
-    --yellow:#0b0b45;
-    --yellow-soft:#E4E4EF;
     --green:#7FB893;
     --green-soft:#E7F3EA;
     --red:#E2949A;
     --red-soft:#FBEDEE;
     --purple:#7b2e99;
     --purple-soft:#F1ECF7;
+    --pink:#C97F86;
+    --pink-soft:#FBEEEF;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
@@ -57,23 +57,25 @@
   }
   header h1{font-family:'Quicksand',sans-serif; font-weight:800; font-size:clamp(31px,5.5vw,48px); margin:0 0 10px; color:var(--ink);}
   header h1 span{color:#C97F86;}
-  header p.sub{color:var(--muted); font-size:18px; max-width:640px; margin:0 auto;}
+  header p.sub{color:var(--muted); font-size:18px; max-width:680px; margin:0 auto;}
   header p.sub b{color:var(--purple);}
 
   .nav-wrap{position:sticky; top:0; z-index:40; background:rgba(250,248,243,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
-  .tabs{max-width:900px; margin:0 auto; display:flex; gap:8px; padding:12px 16px;}
+  .tabs{max-width:960px; margin:0 auto; display:flex; gap:8px; padding:12px 16px;}
   .tab-btn{
     flex:1; display:flex; align-items:center; justify-content:center; gap:8px;
     background:var(--paper); border:2px solid var(--line); border-radius:12px; color:var(--muted);
-    font-weight:700; font-size:16px; padding:11px 6px; cursor:pointer; transition:all .2s ease;
+    font-weight:700; font-size:15.5px; padding:11px 6px; cursor:pointer; transition:all .2s ease;
   }
   .tab-btn:nth-child(1):hover{border-color:var(--blue); color:var(--blue);}
   .tab-btn:nth-child(2):hover{border-color:var(--green); color:#4C8F65;}
-  .tab-btn:nth-child(3):hover{border-color:var(--purple); color:#7C64A0;}
+  .tab-btn:nth-child(3):hover{border-color:var(--pink); color:var(--pink);}
+  .tab-btn:nth-child(4):hover{border-color:var(--purple); color:#7C64A0;}
   .tab-btn.active{color:#fff;}
   .tab-btn.active:nth-child(1){background:var(--blue); border-color:var(--blue); color:#fff;}
   .tab-btn.active:nth-child(2){background:var(--green); border-color:var(--green);}
-  .tab-btn.active:nth-child(3){background:var(--purple); border-color:var(--purple);}
+  .tab-btn.active:nth-child(3){background:var(--pink); border-color:var(--pink);}
+  .tab-btn.active:nth-child(4){background:var(--purple); border-color:var(--purple);}
   .seal-badge{
     width:20px;height:20px;border-radius:50%; border:1.5px solid currentColor;
     display:inline-flex;align-items:center;justify-content:center; font-size:13px; flex-shrink:0;
@@ -90,16 +92,20 @@
   .section-head h2{font-family:'Quicksand',sans-serif; font-weight:800; font-size:29px; margin:0; color:var(--ink);}
   #t1 .section-head h2{color:var(--blue);}
   #t2 .section-head h2{color:#4C8F65;}
-  #t3 .section-head h2{color:#7C64A0;}
+  #t3 .section-head h2{color:var(--pink);}
+  #t4 .section-head h2{color:#7C64A0;}
   .section-desc{color:var(--muted); font-size:17px; margin:0 0 26px;}
 
   .card{background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:22px; margin-bottom:22px; box-shadow:0 6px 20px rgba(80,70,90,0.06);}
   .card h3{margin:0 0 4px; font-size:19px; font-weight:800;}
   #t1 .card h3{color:var(--blue);}
   #t2 .card h3{color:#4C8F65;}
-  #t3 .card h3{color:#7C64A0;}
+  #t3 .card h3{color:var(--pink);}
+  #t4 .card h3{color:#7C64A0;}
   .card .instr{color:var(--muted); font-size:16px; margin:0 0 16px;}
   .card .note{color:var(--muted); font-size:15px; font-style:italic; margin:10px 0 0;}
+  .subhead{font-weight:800; margin:18px 0 8px; color:var(--ink); font-size:16px;}
+  .subhead:first-of-type{margin-top:4px;}
 
   .btn{background:var(--blue); color:#fff; border:none; border-radius:10px; padding:11px 20px; font-weight:700; font-size:16.5px; cursor:pointer; transition:filter .2s, transform .15s;}
   .btn:hover{filter:brightness(1.06);}
@@ -135,7 +141,7 @@
   @keyframes shake{0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);}}
   .wb-progress{color:var(--muted); font-size:15px; margin-top:14px; font-weight:700;}
 
-  /* Translation */
+  /* Sentence rewrite (type-in) exercises */
   .tr-item{margin-bottom:18px; padding-bottom:16px; border-bottom:1px dashed var(--line);}
   .tr-item:last-child{border:none; margin:0; padding:0;}
   .tr-prompt{font-size:18px; font-weight:700; margin-bottom:8px;}
@@ -143,6 +149,11 @@
   .tr-input:focus{outline:none; border-color:var(--purple);}
   .tr-input.correct{border-color:var(--green); background:var(--green-soft);}
   .tr-input.wrong{border-color:var(--red); background:var(--red-soft);}
+
+  /* Reading passage */
+  .passage{background:var(--pink-soft); border:1.5px solid #EFD3D5; border-radius:14px; padding:20px 22px; font-size:17px; line-height:1.85; color:var(--ink);}
+  .passage p{margin:0 0 12px;}
+  .passage p:last-child{margin:0;}
 
   /* Results */
   .results-card{border:2px solid #C97F86; background:#FFF7F5;}
@@ -167,7 +178,8 @@
   footer .brand{color:var(--purple); font-size:19px; font-weight:800; font-family:'Quicksand',sans-serif;}
 
   @media (max-width:640px){
-    .tabs{flex-direction:column;}
+    .tabs{flex-wrap:wrap;}
+    .tabs .tab-btn{flex:1 1 40%;}
   }
 
   /* Login gate */
@@ -206,7 +218,7 @@
   <div class="login-card">
     <div class="login-eyebrow">English with James</div>
     <h2>Bài kiểm tra ôn tập</h2>
-    <p class="login-desc">Nhập thông tin để bắt đầu làm bài: Từ vựng, Ngữ pháp và Luyện nói.</p>
+    <p class="login-desc">Nhập thông tin để bắt đầu làm bài: Từ vựng, Ngữ pháp, Reading và Luyện nói.</p>
     <input class="login-input" id="loginName" placeholder="Họ và tên">
     <input class="login-input" id="loginClass" placeholder="Lớp">
     <input class="login-input" id="loginPass" type="password" placeholder="Mật khẩu">
@@ -220,14 +232,15 @@
 <header>
   <div class="eyebrow">English with James · Bài kiểm tra ôn tập</div>
   <h1>English <span>Review Test</span></h1>
-  <p class="sub">Ôn tập từ vựng và ngữ pháp: loại từ, cụm danh từ, các thì, và cấu trúc câu. Thời gian hoàn thành bài test: 30 phút. Phần Nói ở cuối là luyện tập ngay tại chỗ, không tính điểm.</p>
+  <p class="sub">Ôn tập từ vựng, ngữ pháp (các thì, câu bị động, câu điều kiện, câu gián tiếp) và bài đọc hiểu chủ đề môi trường. Thời gian hoàn thành bài test: 45 phút. Phần Nói ở cuối là luyện tập ngay tại chỗ, không tính điểm.</p>
 </header>
 
 <div class="nav-wrap">
   <div class="tabs">
     <button class="tab-btn active" data-tab="t1" id="navBtn1"><span class="seal-badge" id="seal1">1</span> Từ vựng</button>
     <button class="tab-btn" data-tab="t2" id="navBtn2"><span class="seal-badge" id="seal2">2</span> Ngữ pháp</button>
-    <button class="tab-btn" data-tab="t3" id="navBtn3"><span class="seal-badge" id="seal3">3</span> Nói</button>
+    <button class="tab-btn" data-tab="t3" id="navBtn3"><span class="seal-badge" id="seal3">3</span> Reading</button>
+    <button class="tab-btn" data-tab="t4" id="navBtn4"><span class="seal-badge" id="seal4">4</span> Nói</button>
   </div>
 </div>
 
@@ -236,7 +249,7 @@
   <!-- ================= 1 TỪ VỰNG ================= -->
   <section class="panel active" id="t1">
     <div class="section-head"><h2>1 · Từ vựng (Vocabulary)</h2></div>
-    <p class="section-desc">Ôn lại 20 từ vựng đã học. Điểm sẽ được chấm khi bạn bấm "Nộp bài" ở cuối phần Ngữ pháp.</p>
+    <p class="section-desc">Ôn lại 35 từ vựng mới. Điểm sẽ được chấm khi bạn bấm "Nộp bài" ở cuối phần Reading.</p>
     <div class="card">
       <h3>Ghép từ với nghĩa (Matching)</h3>
       <p class="instr">Bấm 2 ô bất kỳ trong danh sách dưới đây — một ô là từ tiếng Anh (viền xanh), một ô là nghĩa tiếng Việt (viền tím). Ghép đúng → 2 ô biến mất. Ghép sai → 2 ô hiện <b style="color:#C97F86;">màu đỏ</b> rồi quay lại. Ghép cho đến khi hết 35 cặp. (35 cặp × 5đ = 175đ)</p>
@@ -248,42 +261,52 @@
   <!-- ================= 2 NGỮ PHÁP ================= -->
   <section class="panel" id="t2">
     <div class="section-head"><h2>2 · Ngữ pháp (Grammar)</h2></div>
-    <p class="section-desc">Ôn tập 4 chủ điểm ngữ pháp đã học. Đây là phần cuối — sau khi hoàn thành cả Từ vựng và Ngữ pháp, bấm "Nộp bài" bên dưới để xem điểm.</p>
+    <p class="section-desc">Ôn tập 4 chủ điểm ngữ pháp. Điểm được chấm cùng lúc với Từ vựng và Reading — bấm "Nộp bài" ở cuối phần Reading khi đã hoàn thành cả 3 phần.</p>
 
     <div class="card">
-      <h3>2.1 · Loại từ (Word type)</h3>
-      <p class="instr">Xác định loại từ (danh từ, động từ, tính từ, trạng từ, giới từ, liên từ, đại từ, thán từ) của từ được <span class="wt-target">gạch chân</span> trong câu. (8 câu × 2.5đ = 20đ)</p>
-      <div id="wordTypeWrap"></div>
-    </div>
-
-    <div class="card">
-      <h3>2.2 · Danh từ đếm được / không đếm được (Countable/Uncountable)</h3>
-      <p class="instr">Chọn từ/lượng từ đúng. (8 câu × 2.5đ = 20đ)</p>
-      <div id="countUncountWrap"></div>
-    </div>
-
-    <div class="card">
-      <h3>2.3 · Cụm danh từ (Noun phrase)</h3>
-      <p class="instr">Chọn đáp án đúng về cụm danh từ mở rộng, mệnh đề quan hệ, và cụm động tính từ. (5 câu × 4đ = 20đ)</p>
-      <div id="nounPhraseWrap"></div>
-    </div>
-
-    <div class="card">
-      <h3>2.4 · Các thì (Verb tenses)</h3>
-      <p class="instr">Chọn dạng động từ đúng theo thì phù hợp. (10 câu × 4đ = 40đ)</p>
+      <h3>2.1 · Các thì (Verb tenses)</h3>
+      <p class="instr">Chọn dạng động từ đúng theo thì phù hợp với ngữ cảnh của câu. (8 câu × 2.5đ = 20đ)</p>
       <div id="tensesWrap"></div>
     </div>
 
     <div class="card">
-      <h3>2.5 · Cấu trúc câu (Sentence structure)</h3>
-      <p class="instr">Xác định cấu trúc của câu: S+V+C (động từ liên kết), S+V (nội động từ), S+V+O (ngoại động từ), hoặc S+V+IO+DO (tân ngữ gián tiếp + trực tiếp). (8 câu × 2.5đ = 20đ)</p>
-      <div id="sentStructWrap"></div>
+      <h3>2.2 · Câu bị động (Passive voice)</h3>
+      <p class="instr">Viết lại mỗi câu chủ động dưới đây thành câu bị động. Chấm điểm chấp nhận nhiều cách diễn đạt hợp lý. (8 câu × 5đ = 40đ)</p>
+      <div id="passiveWrap"></div>
     </div>
 
     <div class="card">
-      <h3>2.6 · Dịch câu (Việt → Anh)</h3>
-      <p class="instr">Đọc câu tiếng Việt (có cả câu đơn, câu ghép và câu phức), viết bản dịch tiếng Anh vào ô bên dưới. Câu càng phức tạp thì điểm càng cao. Chấm điểm chấp nhận nhiều cách diễn đạt hợp lý, không cần dấu câu chính xác 100%. (8 câu, tổng 35đ)</p>
-      <div id="translateWrap"></div>
+      <h3>2.3 · Câu điều kiện (Conditional sentences)</h3>
+      <p class="instr">Chọn dạng động từ đúng cho câu điều kiện (loại 0, 1, 2, 3). (8 câu × 2.5đ = 20đ)</p>
+      <div id="conditionalWrap"></div>
+    </div>
+
+    <div class="card">
+      <h3>2.4 · Câu gián tiếp (Reported speech)</h3>
+      <p class="instr">Viết lại mỗi câu trực tiếp dưới đây thành câu tường thuật (gián tiếp). Chấm điểm chấp nhận nhiều cách diễn đạt hợp lý. (8 câu × 5đ = 40đ)</p>
+      <div id="reportedWrap"></div>
+    </div>
+  </section>
+
+  <!-- ================= 3 READING ================= -->
+  <section class="panel" id="t3">
+    <div class="section-head"><h2>3 · Reading</h2></div>
+    <p class="section-desc">Đọc đoạn văn dưới đây (có sử dụng từ vựng mới đã học), sau đó trả lời câu hỏi đọc hiểu. Đây là phần cuối — bấm "Nộp bài" bên dưới khi đã hoàn thành cả 3 phần Từ vựng, Ngữ pháp và Reading.</p>
+
+    <div class="card">
+      <h3>Our Changing Planet</h3>
+      <div class="passage">
+        <p>For as long as anyone in the village could remember, the river had provided everything the community needed. But over the past decade, the current situation had become impossible to ignore. Fishermen noticed unusual drought one season and severe flooding the next, and elders often said the weather no longer followed any pattern they recognized.</p>
+        <p>Scientists visiting from the university explained that these were not isolated events. Rising global warming and rapid climate change, driven largely by fossil fuel use and rising carbon emissions, had begun to affect ecosystems far beyond the cities where most greenhouse gases were produced. Carbon footprint, they explained, was not just an abstract number; it represented real consequences for real places. Factories that pollute the air sent smoke that became air pollution drifting for thousands of miles, while water pollution from upstream farms had left a badly polluted stretch of the river unsafe for fishing. Local biodiversity was declining too: several fish species once common in the river were now considered endangered, and nearby deforestation had destroyed much of the natural habitat that once protected the ecosystem from erosion.</p>
+        <p>Rather than waiting for someone else to act, the villagers decided to deal with the problem themselves. A council was formed to discuss how the community could reduce its impact and contribute to a healthier environment. Their first step was to cut down on unnecessary plastic use; within a year, most households had switched to reusable containers, and this reduction alone made a noticeable difference. The council also invested in renewable energy, installing solar panels on the school roof, and worked with local farmers to conserve water responsibly during drier months. A youth group agreed to take responsibility for a river-cleaning project, while older residents focused on the protection and conservation of the surrounding forest, planting native trees to slow deforestation and support wildlife.</p>
+        <p>None of these actions alone could solve a global problem, but together they have an impact on both the local ecosystem and the people who depend on it. The villagers had come to understand something important: the natural resources they had always taken for granted were not endless, and using every resource responsibly was not a burden but a shared duty. As one elder put it, everyone, from a single household to an entire nation, must take responsibility for protecting the resource that had sustained them for generations — the river, the forest, and the fragile balance between them.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Comprehension questions</h3>
+      <p class="instr">Chọn đáp án đúng dựa vào nội dung bài đọc. (8 câu × 5đ = 40đ)</p>
+      <div id="readingWrap"></div>
     </div>
 
     <div style="text-align:center; margin:30px 0;">
@@ -293,21 +316,21 @@
     <div class="card results-card" id="resultsCard" style="display:none;"></div>
   </section>
 
-  <!-- ================= 3 NÓI ================= -->
-  <section class="panel" id="t3">
-    <div class="section-head"><h2>3 · Nói (Speaking)</h2></div>
-    <p class="section-desc">Luyện nói với từ vựng và tình huống đơn giản, phù hợp với lớp mới bắt đầu học. Phần này không tính điểm.</p>
+  <!-- ================= 4 NÓI ================= -->
+  <section class="panel" id="t4">
+    <div class="section-head"><h2>4 · Nói (Speaking)</h2></div>
+    <p class="section-desc">Luyện nói với từ vựng và tình huống mới, trình độ B1-B2. Phần này không tính điểm.</p>
 
     <div class="card">
-      <h3>3.1 · Bốc thăm từ, đặt câu nhanh</h3>
+      <h3>4.1 · Bốc thăm từ, đặt câu nhanh</h3>
       <p class="instr">Bấm "Bốc từ" để nhận 1 từ ngẫu nhiên, đặt 1 câu đơn giản (nói to) với từ đó.</p>
       <div class="draw-card" id="wordDrawCard"><span>Bấm nút bên dưới để bốc 1 từ 🎴</span></div>
       <button class="btn" onclick="drawWord()">🎴 Bốc từ</button>
     </div>
 
     <div class="card">
-      <h3>3.2 · Bốc thăm chủ đề, luyện nói</h3>
-      <p class="instr">Bấm "Bốc chủ đề", nói 2-3 câu đơn giản về chủ đề đó (có thể luyện theo cặp với bạn học).</p>
+      <h3>4.2 · Kể lại một sự việc</h3>
+      <p class="instr">Bấm "Bốc chủ đề", kể lại 2-4 câu về sự việc đó (dùng thì quá khứ, có thể luyện theo cặp với bạn học).</p>
       <div class="draw-card" id="situationDrawCard"><span>Bấm nút bên dưới để bốc 1 chủ đề 🎴</span></div>
       <button class="btn" onclick="drawSituation()">🎴 Bốc chủ đề</button>
     </div>
@@ -317,7 +340,7 @@
 
 <footer>
   <div class="brand">Keep going — you've got this! 🌟</div>
-  Hoàn thành cả 3 phần trước buổi học tiếp theo nhé!
+  Hoàn thành cả 4 phần trước buổi học tiếp theo nhé!
 </footer>
 
 </div>
@@ -332,8 +355,9 @@ const EXAM_PASSWORD = 'james2026'; // shared password - teacher gives this to th
 /* ============ GOOGLE SHEET RESULT LOGGING ============ */
 // Every exam file that should report to the SAME Sheet must use the SAME SHEET_SCRIPT_URL below.
 // Give each exam file its own EXAM_NAME so results from different tests are distinguishable in the Sheet.
-const EXAM_NAME = 'Bài kiểm tra ôn tập 1 (Từ vựng + Ngữ pháp)'; // change this per new test file
+const EXAM_NAME = 'Bài kiểm tra ôn tập 4 (Từ vựng + Ngữ pháp + Reading)'; // change this per new test file
 const SHEET_SCRIPT_URL = 'REPLACE_WITH_APPS_SCRIPT_WEB_APP_URL'; // paste the Apps Script /exec URL here once deployed (see setup instructions)
+
 let studentName = '';
 let studentClass = '';
 function tryLogin(){
@@ -399,44 +423,46 @@ function revealMcq(wrapId, qi, correctIdx){
     else if(btn.classList.contains('picked')){ btn.classList.add('wrong'); }
   });
 }
+function normEn(s){ return (s||'').trim().toLowerCase().replace(/[.,!?;:'"“”‘’]/g,'').replace(/\s+/g,' ').trim(); }
 
-/* ============ 1. VOCABULARY MATCHING GAME (20 pairs x 5đ) ============ */
+/* ============ 1. VOCABULARY MATCHING GAME (35 pairs x 5đ) ============ */
+/* Priority: newest words, taken from the END of tu_vung_moi upward */
 const wbPairs = [
-  ['appointment','cuộc hẹn'],
-  ['athlete','vận động viên'],
-  ['competition','cuộc thi'],
-  ['previous','trước đó'],
-  ['influence','ảnh hưởng'],
-  ['participate','tham gia'],
-  ['documentary','phim tài liệu'],
-  ['unexpected','không mong đợi'],
-  ['laboratory','phòng thí nghiệm'],
-  ['communication','giao tiếp'],
-  ['review','xem lại, phê bình'],
-  ['upcoming','sắp xảy ra'],
-  ['essay','bài luận'],
-  ['conversation','cuộc hội thoại'],
-  ['atmosphere','bầu không khí'],
-  ['foundation','nền tảng'],
-  ['understanding','sự thấu hiểu'],
-  ['announce','công bố, thông báo'],
-  ['impressive','ấn tượng'],
-  ['instructor','người hướng dẫn'],
-  ['experiment','thử nghiệm'],
-  ['expect','mong đợi'],
-  ['dedicated','tận tâm'],
-  ['peaceful','yên bình'],
-  ['surround','bao quanh'],
-  ['neighborhood','khu phố'],
-  ['laughter','tiếng cười'],
-  ['demanding','đòi hỏi, khó khăn'],
-  ['continue','tiếp tục'],
-  ['support','hỗ trợ, giúp đỡ'],
-  ['remind','nhắc lại'],
-  ['attend','tham dự'],
-  ['enjoy','tận hưởng'],
-  ['handle','giải quyết'],
-  ['celebration','lễ mừng'],
+  ['responsibly','một cách có trách nhiệm'],
+  ['resource','tài nguyên'],
+  ['unnecessary','không cần thiết'],
+  ['current','hiện tại, hiện nay (adj); dòng chảy, dòng điện (n)'],
+  ['pollution','sự ô nhiễm'],
+  ['pollute','gây ô nhiễm'],
+  ['polluted','bị ô nhiễm'],
+  ['reduce','giảm'],
+  ['reduction','sự cắt giảm'],
+  ['protect','bảo vệ'],
+  ['protection','sự bảo vệ'],
+  ['conservation','sự bảo tồn'],
+  ['conserve','bảo tồn, tiết kiệm'],
+  ['emission','sự phát thải'],
+  ['carbon emissions','khí thải carbon'],
+  ['greenhouse gases','khí nhà kính'],
+  ['fossil fuel','nhiên liệu hóa thạch'],
+  ['renewable energy','năng lượng tái tạo'],
+  ['biodiversity','đa dạng sinh học'],
+  ['ecosystem','hệ sinh thái'],
+  ['deforestation','nạn phá rừng'],
+  ['drought','hạn hán'],
+  ['flooding','lũ lụt'],
+  ['endangered','có nguy cơ tuyệt chủng'],
+  ['carbon footprint','dấu chân carbon'],
+  ['climate change','biến đổi khí hậu'],
+  ['global warming','sự nóng lên toàn cầu'],
+  ['air pollution','ô nhiễm không khí'],
+  ['water pollution','ô nhiễm nguồn nước'],
+  ['natural resources','tài nguyên thiên nhiên'],
+  ['cut down on','cắt giảm, giảm bớt'],
+  ['deal with','giải quyết, xử lý'],
+  ['contribute to','góp phần vào'],
+  ['have an impact on','có tác động đến'],
+  ['take responsibility for','chịu trách nhiệm về'],
 ];
 let wbMatched = 0;
 let wbFirst = null;
@@ -488,112 +514,93 @@ function selectWbTile(el){
 }
 buildWordBuilder();
 
-/* ============ 2.1 WORD TYPE (8 x 2.5đ) ============ */
-const wordTypeData = [
-  {q:'She is a <span class="wt-target">teacher</span> at this school.', opts:['danh từ (noun)','động từ (verb)','tính từ (adjective)','trạng từ (adverb)'], correct:0},
-  {q:'They usually <span class="wt-target">walk</span> to school.', opts:['danh từ (noun)','động từ (verb)','giới từ (preposition)','tính từ (adjective)'], correct:1},
-  {q:'This is a <span class="wt-target">beautiful</span> house.', opts:['động từ (verb)','tính từ (adjective)','trạng từ (adverb)','danh từ (noun)'], correct:1},
-  {q:'He speaks very <span class="wt-target">quickly</span>.', opts:['tính từ (adjective)','trạng từ (adverb)','danh từ (noun)','giới từ (preposition)'], correct:1},
-  {q:'The cat is <span class="wt-target">under</span> the table.', opts:['giới từ (preposition)','liên từ (conjunction)','trạng từ (adverb)','danh từ (noun)'], correct:0},
-  {q:'I like tea, <span class="wt-target">but</span> he likes coffee.', opts:['liên từ (conjunction)','giới từ (preposition)','đại từ (pronoun)','thán từ (interjection)'], correct:0},
-  {q:'<span class="wt-target">She</span> is my sister.', opts:['danh từ (noun)','đại từ (pronoun)','tính từ (adjective)','động từ (verb)'], correct:1},
-  {q:'<span class="wt-target">Wow!</span> That is amazing.', opts:['thán từ (interjection)','liên từ (conjunction)','trạng từ (adverb)','danh từ (noun)'], correct:0},
-];
-function buildWordType(){
-  buildMcqSet('wordTypeWrap', wordTypeData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
-}
-buildWordType();
-
-/* ============ 2.2 COUNTABLE / UNCOUNTABLE (8 x 2.5đ) ============ */
-const countUncountData = [
-  {q:'Từ nào dưới đây là danh từ <b>không đếm được</b> (uncountable)?', opts:['apple','water','book','chair'], correct:1},
-  {q:'Từ nào dưới đây là danh từ <b>đếm được</b> (countable)?', opts:['milk','rice','student','sugar'], correct:2},
-  {q:'There is ___ juice in the fridge.', opts:['a','some','many','a few'], correct:1},
-  {q:"There aren't ___ apples on the table.", opts:['some','any','much','a'], correct:1},
-  {q:'How ___ money do you have?', opts:['many','much','a few','a lot'], correct:1},
-  {q:'She has ___ friends in this city.', opts:['much','a little','many','a piece of'], correct:2},
-  {q:'I need ___ information about the trip.', opts:['a','an','some','several'], correct:2},
-  {q:'There is ___ milk left in the bottle.', opts:['a few','few','a little','many'], correct:2},
-];
-function buildCountUncount(){
-  buildMcqSet('countUncountWrap', countUncountData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
-}
-buildCountUncount();
-
-/* ============ 2.3 NOUN PHRASE (5 x 4đ) ============ */
-const nounPhraseData = [
-  {q:'Cụm danh từ mở rộng nào đúng cho danh từ "dog"?', opts:['the friendly dog that lives next door','friendly the dog lives next door that','dog the friendly next door that lives','next door the dog friendly lives that'], correct:0},
-  {q:'Trong cụm "a bright yellow jacket", "bright yellow" là loại từ gì?', opts:['danh từ (noun)','tính từ (adjective)','giới từ (preposition)','động từ (verb)'], correct:1},
-  {q:'Câu nào chứa <b>mệnh đề quan hệ</b> (relative clause)?', opts:['The dog that barks at night belongs to my neighbor.','The dog barks at night.','My neighbor has a dog.','The dog is friendly.'], correct:0},
-  {q:'Câu nào chứa <b>cụm động tính từ</b> (participial phrase)?', opts:['The car parked near the cafe has a flat tire.','The car has a flat tire.','I saw a car.','The red car is mine.'], correct:0},
-  {q:'Cụm danh từ mở rộng nào đúng cho danh từ "book"?', opts:['my favorite mystery book on the shelf','book my favorite the shelf on mystery','shelf book favorite mystery my','on my book shelf mystery favorite'], correct:0},
-];
-function buildNounPhrase(){
-  buildMcqSet('nounPhraseWrap', nounPhraseData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
-}
-buildNounPhrase();
-
-/* ============ 2.4 VERB TENSES (10 x 4đ) ============ */
+/* ============ 2.1 VERB TENSES (8 x 2.5đ) ============ */
 const tensesData = [
   {q:'Every morning, she ___ (drink) a cup of tea.', opts:['drink','drinks','drank','is drinking'], correct:1},
   {q:'Look! The children ___ (play) in the garden right now.', opts:['play','plays','are playing','played'], correct:2},
   {q:'I ___ (visit) Paris three times.', opts:['visit','visited','have visited','am visiting'], correct:2},
-  {q:'She ___ (study) English for two hours.', opts:['studies','studied','has been studying','will study'], correct:2},
   {q:'We ___ (go) to the beach last weekend.', opts:['go','goes','went','have gone'], correct:2},
   {q:'He ___ (read) a book when the phone rang.', opts:['read','reads','was reading','has read'], correct:2},
   {q:'When I arrived, they ___ (already/leave).', opts:['already leave','had already left','have already left','already left'], correct:1},
   {q:'I think it ___ (rain) tomorrow.', opts:['rains','rained','will rain','is raining'], correct:2},
   {q:'Look at those clouds! It ___ (rain) soon.', opts:['rains','will rain','is going to rain','rained'], correct:2},
-  {q:'This time tomorrow, I ___ (fly) to New York.', opts:['fly','will fly','will be flying','am flying'], correct:2},
 ];
 function buildTenses(){
   buildMcqSet('tensesWrap', tensesData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
 }
 buildTenses();
 
-/* ============ 2.5 SENTENCE STRUCTURE (8 x 2.5đ) ============ */
-const sentStructData = [
-  {q:'"Rosa is smart."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:0},
-  {q:'"The vase fell."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:1},
-  {q:'"Rosa ate the cake."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:2},
-  {q:'"Rosa gave me a pen."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:3},
-  {q:'"The children are sleeping."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:1},
-  {q:'"My sister bought a new jacket."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:2},
-  {q:'"This soup tastes delicious."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:0},
-  {q:'"He told us a story."', opts:['S + V + C (Linking Verb)','S + V (Intransitive)','S + V + O (Transitive)','S + V + IO + DO'], correct:3},
+/* ============ 2.2 PASSIVE VOICE (type-in rewrite, 8 x 5đ) ============ */
+const passiveData = [
+  {vi:'They build this house every year.', answers:['this house is built every year']},
+  {vi:'She wrote this letter yesterday.', answers:['this letter was written yesterday']},
+  {vi:'The teacher is checking our homework now.', answers:['our homework is being checked by the teacher now','our homework is being checked now']},
+  {vi:'They have finished the project.', answers:['the project has been finished']},
+  {vi:'Someone stole my bike last night.', answers:['my bike was stolen last night']},
+  {vi:'People speak English all over the world.', answers:['english is spoken all over the world']},
+  {vi:'They will announce the results tomorrow.', answers:['the results will be announced tomorrow']},
+  {vi:'The chef is cooking dinner right now.', answers:['dinner is being cooked right now','dinner is being cooked by the chef right now']},
 ];
-function buildSentStruct(){
-  buildMcqSet('sentStructWrap', sentStructData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
-}
-buildSentStruct();
-
-/* ============ 2.6 TRANSLATION (Vietnamese -> English, 6 x 5đ) ============ */
-const translateData = [
-  {vi:'Tôi thức dậy lúc 6 giờ 30 mỗi buổi sáng.', points:3, answers:['i wake up at 630 every morning','i wake up at 6 30 every morning','i usually wake up at 630 every morning']},
-  {vi:'Cô ấy đang đọc sách ngay bây giờ.', points:3, answers:['she is reading a book right now','she is reading a book now']},
-  {vi:'Tôi thích trà, nhưng anh ấy thích cà phê.', points:4, answers:['i like tea but he likes coffee']},
-  {vi:'Mặt trời mọc, và những chú chim hót vào buổi sáng.', points:4, answers:['the sun rises and the birds sing in the morning','the sun rises and the birds sing']},
-  {vi:'Khi tôi đến, họ đã rời đi rồi.', points:5, answers:['when i arrived they had already left','they had already left when i arrived']},
-  {vi:'Mặc dù trời mưa, chúng tôi vẫn đi dạo trong công viên.', points:5, answers:['although it was raining we still went for a walk in the park','although it rained we still went for a walk in the park','even though it was raining we still went for a walk in the park']},
-  {vi:'Con chó sủa vào ban đêm thuộc về hàng xóm của tôi.', points:5, answers:['the dog that barks at night belongs to my neighbor','the dog which barks at night belongs to my neighbor','the dog that barks at night belongs to my neighbour']},
-  {vi:'Vì trời mưa to nên chúng tôi ở nhà, và chúng tôi xem phim cùng nhau.', points:6, answers:['because it rained heavily we stayed home and we watched a movie together','because it was raining heavily we stayed home and watched a movie together','because it rained heavily we stayed at home and watched a movie together']},
-];
-function buildTranslate(){
-  const wrap = document.getElementById('translateWrap');
+function buildRewriteSet(wrapId, data, placeholder){
+  const wrap = document.getElementById(wrapId);
   wrap.innerHTML = '';
-  translateData.forEach((item,i)=>{
+  data.forEach((item,i)=>{
     const d = document.createElement('div');
     d.className = 'tr-item';
     d.innerHTML = `<div class="tr-prompt">${i+1}. ${item.vi}</div>
-      <input class="tr-input" id="trIn${i}" placeholder="Type your English translation...">`;
+      <input class="tr-input" id="${wrapId}In${i}" placeholder="${placeholder}">`;
     wrap.appendChild(d);
   });
 }
-buildTranslate();
-function normEn(s){ return (s||'').trim().toLowerCase().replace(/[.,!?;:'"“”‘’]/g,'').replace(/\s+/g,' ').trim(); }
+buildRewriteSet('passiveWrap', passiveData, 'Type the passive sentence...');
 
-/* ============ 3.1 WORD DRAW (speaking, ungraded, B1-B2 level) ============ */
-const speakWords = ['confident','decision','balance','connect','improve','concern','planet','positive','quality','stressful','overwhelmed','organized','colleague','calm','recently','focus','realize','maintain','respect','honesty'];
+/* ============ 2.3 CONDITIONAL SENTENCES (8 x 2.5đ) ============ */
+const conditionalData = [
+  {q:'If you heat water to 100°C, it ___. (Type 0)', opts:['boils','will boil','boiled','would boil'], correct:0},
+  {q:'If it rains tomorrow, we ___ the picnic. (Type 1)', opts:['cancel','will cancel','cancelled','would cancel'], correct:1},
+  {q:'If she studies hard, she ___ the exam. (Type 1)', opts:['passes','will pass','passed','would pass'], correct:1},
+  {q:'If I ___ rich, I would travel the world. (Type 2)', opts:['am','was','were','will be'], correct:2},
+  {q:'If he had more time, he ___ learn Japanese. (Type 2)', opts:['will','would','would have','is going to'], correct:1},
+  {q:'If they had left earlier, they ___ the train. (Type 3)', opts:['would catch','would have caught','caught','catch'], correct:1},
+  {q:'If I ___ known about the party, I would have come. (Type 3)', opts:['had','have','would have','was'], correct:0},
+  {q:'If I were you, I ___ apologize.', opts:['will','would','am','was'], correct:1},
+];
+function buildConditional(){
+  buildMcqSet('conditionalWrap', conditionalData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
+}
+buildConditional();
+
+/* ============ 2.4 REPORTED SPEECH (type-in rewrite, 8 x 5đ) ============ */
+const reportedData = [
+  {vi:'"I am tired," she said.', answers:['she said that she was tired','she said she was tired']},
+  {vi:'"I will call you," he said.', answers:['he said that he would call me','he said he would call me']},
+  {vi:'"We have finished the work," they said.', answers:['they said that they had finished the work','they said they had finished the work']},
+  {vi:'"I am reading a book," she said.', answers:['she said that she was reading a book','she said she was reading a book']},
+  {vi:'"Do you like coffee?" he asked me.', answers:['he asked me if i liked coffee','he asked if i liked coffee','he asked me whether i liked coffee']},
+  {vi:'"Close the door," she told him.', answers:['she told him to close the door']},
+  {vi:'"I went to Paris last year," he said.', answers:['he said that he had gone to paris the year before','he said he had gone to paris the year before','he said that he had gone to paris the previous year']},
+  {vi:'"Where do you live?" she asked me.', answers:['she asked me where i lived','she asked where i lived']},
+];
+buildRewriteSet('reportedWrap', reportedData, 'Type the reported sentence...');
+
+/* ============ 3. READING COMPREHENSION (8 x 5đ) ============ */
+const readingData = [
+  {q:'Why did the villagers first realize something was wrong with their environment?', opts:['A government report warned them','They noticed unusual weather patterns like drought and severe flooding','Scientists forced them to evacuate','Local factories shut down suddenly'], correct:1},
+  {q:'According to the visiting scientists, what were the main causes of these environmental changes?', opts:['Overfishing and tourism','Fossil fuel use and rising carbon emissions','A shortage of clean water','Poor farming techniques only'], correct:1},
+  {q:'What effect did water pollution have on the river?', opts:['It made the river disappear','It left part of the river too polluted for safe fishing','It caused the river to flood every year','It made the fish grow larger'], correct:1},
+  {q:'Why were several fish species in the river considered endangered?', opts:['Declining biodiversity, pollution, and habitat loss from deforestation','Overfishing by tourists','A new species was introduced to the river','The river changed its course'], correct:0},
+  {q:"What was one of the villagers' first concrete steps to reduce their environmental impact?", opts:['They moved to a different village','They cut down on unnecessary plastic use','They banned all fishing','They stopped farming completely'], correct:1},
+  {q:'What renewable energy action did the council take?', opts:['They built a dam','They installed solar panels on the school roof','They imported electricity from another town','They planted wind turbines in the river'], correct:1},
+  {q:'What does the passage suggest about responsibility for environmental problems?', opts:['Only governments should be responsible','Only scientists can solve environmental problems','Both individuals and communities share responsibility for protecting resources','Nothing can be done at the local level'], correct:2},
+  {q:"What is the best summary of the passage's main idea?", opts:['Climate change cannot be stopped at the local level','A community can respond to environmental damage through practical, shared responsibility','Villages should rely entirely on scientists for solutions','Environmental problems only affect coastal areas'], correct:1},
+];
+function buildReading(){
+  buildMcqSet('readingWrap', readingData, (item,qi)=>`<div class="mcq-q">${qi+1}. ${item.q}</div>`);
+}
+buildReading();
+
+/* ============ 4.1 WORD DRAW (speaking, ungraded, B1-B2 level) ============ */
+const speakWords = ['transform','significant','motivated','determined','demonstrate','facilitate','urban','adorable','emotion','believe','secret','vibrant','inspiration','amount','depth','energetic','excellent','wonderful','truth','role'];
 let lastWord = -1;
 function drawWord(){
   let idx;
@@ -602,18 +609,18 @@ function drawWord(){
   document.getElementById('wordDrawCard').innerHTML = `<span class="word">${speakWords[idx]}</span>`;
 }
 
-/* ============ 3.2 SITUATION DRAW (speaking, ungraded) ============ */
+/* ============ 4.2 TELL ABOUT AN EVENT (speaking, ungraded) ============ */
 const situations = [
-  'Giới thiệu bản thân: tên, tuổi, bạn đến từ đâu.',
-  'Nói về gia đình bạn: có bao nhiêu người, họ làm nghề gì.',
-  'Nói về một ngày bình thường của bạn (daily routine).',
-  'Nói về món ăn yêu thích của bạn.',
-  'Miêu tả người bạn thân nhất của bạn.',
-  'Nói về thời tiết hôm nay.',
-  'Nói về sở thích của bạn (hobbies).',
-  'Hỏi bạn cùng lớp xem họ có nuôi thú cưng không.',
-  'Nói về kế hoạch của bạn cho cuối tuần này.',
-  'Miêu tả ngôi nhà hoặc căn phòng của bạn.',
+  'Kể về một lần bạn bị lạc đường.',
+  'Kể về một món quà đáng nhớ bạn từng nhận hoặc tặng.',
+  'Kể về một chuyến du lịch không như mong đợi.',
+  'Kể về lần đầu tiên bạn đi làm hoặc đi học xa nhà.',
+  'Kể về một người đã truyền cảm hứng cho bạn.',
+  'Kể về một lần bạn mắc lỗi và đã học được điều gì từ đó.',
+  'Kể về một ngày lễ hoặc sự kiện văn hoá đáng nhớ mà bạn từng tham gia.',
+  'Kể về một lần thời tiết xấu ảnh hưởng đến kế hoạch của bạn.',
+  'Kể về khoảnh khắc bạn cảm thấy tự tin nhất.',
+  'Kể về một cuộc gặp gỡ tình cờ thú vị.',
 ];
 let lastSituation = -1;
 function drawSituation(){
@@ -624,8 +631,9 @@ function drawSituation(){
 }
 
 /* ============ GRADING / SUBMIT ============ */
-const VOCAB_MAX = wbPairs.length * 5;          // 100
-const GRAMMAR_MAX = 20 + 20 + 20 + 40 + 20 + 35; // 155
+const VOCAB_MAX = wbPairs.length * 5;   // 175
+const GRAMMAR_MAX = 20 + 40 + 20 + 40;  // 120
+const READING_MAX = readingData.length * 5; // 40
 
 function submitExam(){
   if(examSubmitted) return;
@@ -634,70 +642,69 @@ function submitExam(){
   document.getElementById('submitBtn').disabled = true;
   document.querySelectorAll('.tr-input').forEach(i=>i.disabled = true);
 
-  const mistakes = { 'Từ vựng':[], 'Ngữ pháp':[] };
-  let scoreVocab = 0, scoreGrammar = 0;
+  const mistakes = { 'Từ vựng':[], 'Ngữ pháp':[], 'Reading':[] };
+  let scoreVocab = 0, scoreGrammar = 0, scoreReading = 0;
 
-  // Vocabulary matching game (20 pairs x 5 = 100)
+  // Vocabulary matching game
   scoreVocab = wbMatched * 5;
   if(wbMatched < wbPairs.length){
     mistakes['Từ vựng'].push(`Bạn mới ghép đúng ${wbMatched}/${wbPairs.length} cặp từ. Hãy quay lại tab Từ vựng để ghép nốt (điểm được tính theo số cặp đã ghép đúng tại thời điểm nộp bài).`);
     document.querySelectorAll('#wbPool .wb-tile:not(.used)').forEach(t=>t.classList.add('incomplete'));
   }
 
-  // 2.1 word type (8 x 2.5 = 20)
-  wordTypeData.forEach((item,qi)=>{
-    const picked = getPicked('wordTypeWrap', qi);
-    if(picked && picked.oi === item.correct){ scoreGrammar += 2.5; }
-    else mistakes['Ngữ pháp'].push(`2.1 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
-    revealMcq('wordTypeWrap', qi, item.correct);
-  });
-  // 2.2 countable/uncountable (8 x 2.5 = 20)
-  countUncountData.forEach((item,qi)=>{
-    const picked = getPicked('countUncountWrap', qi);
-    if(picked && picked.oi === item.correct){ scoreGrammar += 2.5; }
-    else mistakes['Ngữ pháp'].push(`2.2 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
-    revealMcq('countUncountWrap', qi, item.correct);
-  });
-  // 2.3 noun phrase (5 x 4 = 20)
-  nounPhraseData.forEach((item,qi)=>{
-    const picked = getPicked('nounPhraseWrap', qi);
-    if(picked && picked.oi === item.correct){ scoreGrammar += 4; }
-    else mistakes['Ngữ pháp'].push(`2.3 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
-    revealMcq('nounPhraseWrap', qi, item.correct);
-  });
-  // 2.4 tenses (10 x 4 = 40)
+  // 2.1 tenses (8 x 2.5 = 20)
   tensesData.forEach((item,qi)=>{
     const picked = getPicked('tensesWrap', qi);
-    if(picked && picked.oi === item.correct){ scoreGrammar += 4; }
-    else mistakes['Ngữ pháp'].push(`2.4 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
+    if(picked && picked.oi === item.correct){ scoreGrammar += 2.5; }
+    else mistakes['Ngữ pháp'].push(`2.1 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
     revealMcq('tensesWrap', qi, item.correct);
   });
-  // 2.5 sentence structure (8 x 2.5 = 20)
-  sentStructData.forEach((item,qi)=>{
-    const picked = getPicked('sentStructWrap', qi);
-    if(picked && picked.oi === item.correct){ scoreGrammar += 2.5; }
-    else mistakes['Ngữ pháp'].push(`2.5 · Câu ${qi+1} (${item.q}): bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
-    revealMcq('sentStructWrap', qi, item.correct);
-  });
-  // 2.6 translation (8 câu, độ khó tăng dần: đơn, ghép, phức — tổng 35đ, lenient multi-answer match)
-  translateData.forEach((item,i)=>{
-    const inputEl = document.getElementById('trIn'+i);
+
+  // 2.2 passive voice rewrite (8 x 5 = 40)
+  passiveData.forEach((item,i)=>{
+    const inputEl = document.getElementById('passiveWrapIn'+i);
     const val = inputEl.value;
     const ok = item.answers.some(a=>normEn(val)===normEn(a));
-    if(ok){ scoreGrammar += item.points; inputEl.classList.add('correct'); }
+    if(ok){ scoreGrammar += 5; inputEl.classList.add('correct'); }
     else {
-      mistakes['Ngữ pháp'].push(`2.6 · Câu ${i+1} ("${item.vi}"): bạn dịch "${val||'(bỏ trống)'}" — đáp án gợi ý: "${item.answers[0]}"`);
+      mistakes['Ngữ pháp'].push(`2.2 · Câu ${i+1} ("${item.vi}"): bạn viết "${val||'(bỏ trống)'}" — đáp án gợi ý: "${item.answers[0]}"`);
       inputEl.classList.add('wrong');
     }
   });
 
-  const total = scoreVocab + scoreGrammar;
-  const grandMax = VOCAB_MAX + GRAMMAR_MAX;
+  // 2.3 conditional (8 x 2.5 = 20)
+  conditionalData.forEach((item,qi)=>{
+    const picked = getPicked('conditionalWrap', qi);
+    if(picked && picked.oi === item.correct){ scoreGrammar += 2.5; }
+    else mistakes['Ngữ pháp'].push(`2.3 · Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
+    revealMcq('conditionalWrap', qi, item.correct);
+  });
 
-  // Build a flexible section-breakdown string and mistakes string so the SAME Sheet
-  // can receive rows from future exams that have different sections/points.
-  const breakdownText = `Từ vựng: ${scoreVocab}/${VOCAB_MAX} | Ngữ pháp: ${scoreGrammar}/${GRAMMAR_MAX}`;
-  const mistakesText = ['Từ vựng','Ngữ pháp'].map(sec =>
+  // 2.4 reported speech rewrite (8 x 5 = 40)
+  reportedData.forEach((item,i)=>{
+    const inputEl = document.getElementById('reportedWrapIn'+i);
+    const val = inputEl.value;
+    const ok = item.answers.some(a=>normEn(val)===normEn(a));
+    if(ok){ scoreGrammar += 5; inputEl.classList.add('correct'); }
+    else {
+      mistakes['Ngữ pháp'].push(`2.4 · Câu ${i+1} ("${item.vi}"): bạn viết "${val||'(bỏ trống)'}" — đáp án gợi ý: "${item.answers[0]}"`);
+      inputEl.classList.add('wrong');
+    }
+  });
+
+  // Reading
+  readingData.forEach((item,qi)=>{
+    const picked = getPicked('readingWrap', qi);
+    if(picked && picked.oi === item.correct){ scoreReading += 5; }
+    else mistakes['Reading'].push(`Câu ${qi+1}: bạn chọn "${picked?picked.text:'(chưa chọn)'}" — đáp án đúng: "${item.opts[item.correct]}"`);
+    revealMcq('readingWrap', qi, item.correct);
+  });
+
+  const total = scoreVocab + scoreGrammar + scoreReading;
+  const grandMax = VOCAB_MAX + GRAMMAR_MAX + READING_MAX;
+
+  const breakdownText = `Từ vựng: ${scoreVocab}/${VOCAB_MAX} | Ngữ pháp: ${scoreGrammar}/${GRAMMAR_MAX} | Reading: ${scoreReading}/${READING_MAX}`;
+  const mistakesText = ['Từ vựng','Ngữ pháp','Reading'].map(sec =>
     `[${sec}] ` + (mistakes[sec].length ? mistakes[sec].join(' | ').replace(/<[^>]+>/g,'') : 'Đúng hết')
   ).join('\n');
 
@@ -722,12 +729,13 @@ function submitExam(){
   html += `<p style="font-weight:700; margin:-6px 0 16px;">${studentName} — Lớp ${studentClass}</p>`;
   html += scoreRow('Từ vựng', scoreVocab, VOCAB_MAX);
   html += scoreRow('Ngữ pháp', scoreGrammar, GRAMMAR_MAX);
+  html += scoreRow('Reading', scoreReading, READING_MAX);
   html += `<div class="grand-total">Tổng: ${total} / ${grandMax} điểm</div>`;
-  html += `<p style="text-align:center; color:var(--muted); font-size:13.5px; margin:-6px 0 14px;">Cuộn lên để xem từng câu: <b style="color:#3E7A56;">xanh</b> là đáp án đúng, <b style="color:#B0525A;">đỏ</b> là câu bạn chọn sai.</p>`;
+  html += `<p style="text-align:center; color:var(--muted); font-size:13.5px; margin:-6px 0 14px;">Cuộn lên để xem từng câu: <b style="color:#3E7A56;">xanh</b> là đáp án đúng, <b style="color:#B0525A;">đỏ</b> là câu bạn chọn/viết sai.</p>`;
   if(SHEET_SCRIPT_URL && SHEET_SCRIPT_URL.indexOf('REPLACE_WITH') !== 0){
     html += `<p style="text-align:center; color:var(--muted); font-size:12.5px; margin:-8px 0 10px;">Kết quả đã được gửi cho giáo viên.</p>`;
   }
-  ['Từ vựng','Ngữ pháp'].forEach(sec=>{
+  ['Từ vựng','Ngữ pháp','Reading'].forEach(sec=>{
     html += `<div class="mistake-group"><h4>${sec}</h4>`;
     if(mistakes[sec].length===0){ html += `<div class="all-correct">✓ Đúng hết!</div>`; }
     else { mistakes[sec].forEach(m=>{ html += `<div class="mistake-item">${m}</div>`; }); }
@@ -737,10 +745,8 @@ function submitExam(){
   card.innerHTML = html;
   card.scrollIntoView({behavior:'smooth', block:'start'});
 
-  document.getElementById('seal2').textContent = '✓';
-  document.getElementById('navBtn2').classList.add('done');
-  document.getElementById('seal1').textContent = '✓';
-  document.getElementById('navBtn1').classList.add('done');
+  ['seal1','seal2','seal3'].forEach(id=>{ document.getElementById(id).textContent = '✓'; });
+  ['navBtn1','navBtn2','navBtn3'].forEach(id=>{ document.getElementById(id).classList.add('done'); });
 }
 function scoreRow(label, score, max){
   const pct = Math.round((score/max)*100);
